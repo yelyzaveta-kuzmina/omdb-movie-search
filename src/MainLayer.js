@@ -3,6 +3,7 @@ import SearchWrapper from "./components/searchWrapper/searchWrapper";
 import posterNotAvailable from "./assets/poster-not-available.jpeg";
 import useMovies from "./useMovies";
 import styles from "./styles.module.scss";
+import WelcomeSearchWrapper from "./components/searchWrapper/welcomeSearchWrapper";
 
 const MainLayer = () => {
   const {
@@ -17,7 +18,7 @@ const MainLayer = () => {
   return (
     <>
       {!selectedMovie && (
-        <div className={styles.lonelySearchWrapper}>
+        <WelcomeSearchWrapper onMovieSelect={onMovieSelect}>
           <SearchWrapper
             className={styles.search}
             fetchedMovies={fetchedMovies}
@@ -25,22 +26,7 @@ const MainLayer = () => {
             onInputValueChange={onInputValueChange}
             onMovieSelect={onMovieSelect}
           />
-          <div className={styles.animation}>
-            Welcome here!{" "}
-            <span
-              onClick={() =>
-                onMovieSelect("House of Gucci", {
-                  Title: "House of Gucci",
-                  Year: 2021,
-                  Poster:
-                    "https://m.media-amazon.com/images/M/MV5BZThjMTA5YjgtZmViZi00YjY0LTk5MzQtMjUwMGEzZGVlYzFjXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_SX300.jpg",
-                })
-              }
-            >
-              Select random movie
-            </span>
-          </div>
-        </div>
+        </WelcomeSearchWrapper>
       )}
 
       {selectedMovie && (
