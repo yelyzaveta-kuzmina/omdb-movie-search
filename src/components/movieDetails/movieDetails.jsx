@@ -12,6 +12,7 @@ const Block = ({ label, value }) => {
 const MovieDetails = ({ selectedMovieDescription }) => {
   return (
     <div className={styles.details}>
+      <Block label={"Runtime"} value={selectedMovieDescription.Runtime} />
       <Block label={"Genre"} value={selectedMovieDescription.Genre} />
       <Block label={"Country"} value={selectedMovieDescription.Country} />
       <Block label={"Director"} value={selectedMovieDescription.Director} />

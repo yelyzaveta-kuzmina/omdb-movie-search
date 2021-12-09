@@ -5,14 +5,8 @@ import useMovies from "./useMovies";
 import styles from "./styles.module.scss";
 
 const MainLayer = () => {
-  const {
-    inputValue,
-    selectedMovie,
-    fetchedMovies,
-    selectedMovieDescription,
-    onInputValueChange,
-    onMovieSelect,
-  } = useMovies();
+  const { onMovieSelect, selectedMovie, selectedMovieDescription } =
+    useMovies();
 
   return (
     <>
@@ -20,9 +14,6 @@ const MainLayer = () => {
         <WelcomeSearchWrapper onMovieSelect={onMovieSelect}>
           <SearchWrapper
             className={styles.search}
-            fetchedMovies={fetchedMovies}
-            inputValue={inputValue}
-            onInputValueChange={onInputValueChange}
             onMovieSelect={onMovieSelect}
           />
         </WelcomeSearchWrapper>
@@ -30,19 +21,12 @@ const MainLayer = () => {
 
       {selectedMovie && (
         <div className={styles.main}>
-          <SearchWrapper
-            fetchedMovies={fetchedMovies}
-            inputValue={inputValue}
-            onInputValueChange={onInputValueChange}
-            onMovieSelect={onMovieSelect}
-          />
+          <SearchWrapper onMovieSelect={onMovieSelect} />
 
-          {selectedMovie && (
-            <MovieContainer
-              selectedMovie={selectedMovie}
-              selectedMovieDescription={selectedMovieDescription}
-            />
-          )}
+          <MovieContainer
+            selectedMovie={selectedMovie}
+            selectedMovieDescription={selectedMovieDescription}
+          />
         </div>
       )}
     </>
