@@ -40,28 +40,26 @@ const MainLayer = () => {
 
           {selectedMovie && (
             <div className={styles.content}>
-              <>
-                <div className={styles.posterWrapper}>
-                  <figure>
-                    <img
-                      src={
-                        selectedMovie.Poster === "N/A" || !selectedMovie.Poster
-                          ? posterNotAvailable
-                          : selectedMovie.Poster
-                      }
-                      alt=""
-                    />
-                    <figcaption>
-                      <b>
-                        {selectedMovie.Title} ({selectedMovie.Year})
-                      </b>
-                    </figcaption>
-                  </figure>
-                </div>
-                <MovieDetails
-                  selectedMovieDescription={selectedMovieDescription}
-                />
-              </>
+              <div className={styles.posterWrapper}>
+                <figure>
+                  <img
+                    src={
+                      selectedMovie.Poster === "N/A" || !selectedMovie.Poster
+                        ? posterNotAvailable
+                        : selectedMovie.Poster
+                    }
+                    alt=""
+                  />
+                  <figcaption>
+                    <b>
+                      {selectedMovie.Title} ({selectedMovie.Year})
+                    </b>
+                  </figcaption>
+                </figure>
+              </div>
+              <MovieDetails
+                selectedMovieDescription={selectedMovieDescription}
+              />
             </div>
           )}
         </div>
