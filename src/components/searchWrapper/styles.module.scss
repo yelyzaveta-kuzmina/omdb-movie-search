@@ -1,0 +1,19 @@
+.searchWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 1rem;
+  box-shadow: rgb(60 64 67 / 10%) 0px 1px 3px 1px;
+  background: #f98162;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+
+  input {
+    height: 100%;
+    width: calc(100% + 30%);
+    padding: 0.5rem;
+    font-size: 1rem;
+    outline: none;
+  }
+}
