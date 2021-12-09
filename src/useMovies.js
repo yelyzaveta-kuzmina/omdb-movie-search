@@ -1,6 +1,8 @@
 import { useCallback, useState } from "react";
 
 const useMovies = () => {
+  const [inputValue, setInputValue] = useState("");
+  const [selectedMovie, setSelectedMovie] = useState("");
   const [fetchedMovies, setFetchedMovies] = useState([]);
   const [selectedMovieDescription, setSelectedMovieDescription] = useState("");
 
@@ -24,11 +26,32 @@ const useMovies = () => {
     []
   );
 
+  const onInputValueChange = useCallback(
+    async (event) => {
+      setInputValue(event.target.value);
+      await fetchMovies(event.target.value);
+    },
+    [fetchMovies]
+  );
+
+  const onMovieSelect = useCallback(
+    async (value, movieObject) => {
+      setInputValue(value);
+      await fetchMovieDetails(value);
+      setSelectedMovie(movieObject);
+    },
+    [fetchMovieDetails]
+  );
+
   return {
+    inputValue,
+    selectedMovie,
     fetchMovies,
     fetchMovieDetails,
     fetchedMovies,
     selectedMovieDescription,
+    onInputValueChange,
+    onMovieSelect,
   };
 };
 

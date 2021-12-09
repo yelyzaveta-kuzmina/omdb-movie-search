@@ -1,4 +1,3 @@
-import { useCallback, useState } from "react";
 import MovieDetails from "./components/movieDetails/movieDetails";
 import SearchWrapper from "./components/searchWrapper/searchWrapper";
 import posterNotAvailable from "./assets/poster-not-available.jpeg";
@@ -6,32 +5,14 @@ import useMovies from "./useMovies";
 import styles from "./styles.module.scss";
 
 const MainLayer = () => {
-  const [inputValue, setInputValue] = useState("");
-  const [selectedMovie, setSelectedMovie] = useState("");
-
   const {
-    fetchMovies,
-    fetchMovieDetails,
+    inputValue,
+    selectedMovie,
     fetchedMovies,
     selectedMovieDescription,
+    onInputValueChange,
+    onMovieSelect,
   } = useMovies();
-
-  const onInputValueChange = useCallback(
-    async (event) => {
-      setInputValue(event.target.value);
-      await fetchMovies(event.target.value);
-    },
-    [fetchMovies]
-  );
-
-  const onMovieSelect = useCallback(
-    async (value, movieObject) => {
-      setInputValue(value);
-      await fetchMovieDetails(value);
-      setSelectedMovie(movieObject);
-    },
-    [fetchMovieDetails]
-  );
 
   return (
     <>
