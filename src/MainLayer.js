@@ -1,9 +1,8 @@
-import MovieDetails from "./components/movieDetails/movieDetails";
 import SearchWrapper from "./components/searchWrapper/searchWrapper";
-import posterNotAvailable from "./assets/poster-not-available.jpeg";
+import WelcomeSearchWrapper from "./components/searchWrapper/welcomeSearchWrapper";
+import MovieContainer from "./components/movieContainer/movieContainer";
 import useMovies from "./useMovies";
 import styles from "./styles.module.scss";
-import WelcomeSearchWrapper from "./components/searchWrapper/welcomeSearchWrapper";
 
 const MainLayer = () => {
   const {
@@ -39,28 +38,10 @@ const MainLayer = () => {
           />
 
           {selectedMovie && (
-            <div className={styles.content}>
-              <div className={styles.posterWrapper}>
-                <figure>
-                  <img
-                    src={
-                      selectedMovie.Poster === "N/A" || !selectedMovie.Poster
-                        ? posterNotAvailable
-                        : selectedMovie.Poster
-                    }
-                    alt=""
-                  />
-                  <figcaption>
-                    <b>
-                      {selectedMovie.Title} ({selectedMovie.Year})
-                    </b>
-                  </figcaption>
-                </figure>
-              </div>
-              <MovieDetails
-                selectedMovieDescription={selectedMovieDescription}
-              />
-            </div>
+            <MovieContainer
+              selectedMovie={selectedMovie}
+              selectedMovieDescription={selectedMovieDescription}
+            />
           )}
         </div>
       )}
