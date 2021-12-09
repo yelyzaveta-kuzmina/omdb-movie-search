@@ -10,16 +10,20 @@
     border-radius: 1rem;
   }
 
-  .animation {
+  .text {
     position: absolute;
     top: -2rem;
     right: 20%;
     text-transform: uppercase;
 
     span {
+      background: #f98162;
+      color: white;
+    }
+
+    span {
       &:hover {
-        background: #f98162;
-        color: white;
+        background: #43ac6a;
         cursor: pointer;
         transition: all 0.2s ease-in;
       }
@@ -38,9 +42,14 @@
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
 
+  .yearInput {
+    width: 10%;
+    margin: 0 2rem;
+  }
+
   input {
     height: 100%;
-    width: calc(100% + 30%);
+    width: 15rem;
     padding: 0.5rem;
     font-size: 1rem;
     outline: none;

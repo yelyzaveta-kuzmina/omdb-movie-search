@@ -5,7 +5,7 @@ const WelcomeSearchWrapper = ({ children, onMovieSelect }) => {
   return (
     <div className={styles.lonelySearchWrapper}>
       {children}
-      <div className={styles.animation}>
+      <div className={styles.text}>
         Welcome here!{" "}
         <span
           onClick={() =>
