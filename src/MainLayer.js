@@ -2,33 +2,19 @@ import { useCallback, useState } from "react";
 import MovieDetails from "./components/movieDetails/movieDetails";
 import SearchWrapper from "./components/searchWrapper/searchWrapper";
 import posterNotAvailable from "./assets/poster-not-available.jpeg";
+import useMovies from "./useMovies";
 import styles from "./styles.module.scss";
 
 const MainLayer = () => {
   const [inputValue, setInputValue] = useState("");
-  const [fetchedMovies, setFetchedMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState("");
-  const [selectedMovieDescription, setSelectedMovieDescription] = useState("");
 
-  const fetchMovies = useCallback(
-    async (debouncedValue) =>
-      await fetch(
-        `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${debouncedValue}`
-      ).then((response) =>
-        response.json().then((data) => setFetchedMovies(data.Search))
-      ),
-    []
-  );
-
-  const fetchMovieDetails = useCallback(
-    async (movie) =>
-      await fetch(
-        `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&t=${movie}&p=full`
-      ).then((response) =>
-        response.json().then((data) => setSelectedMovieDescription(data))
-      ),
-    []
-  );
+  const {
+    fetchMovies,
+    fetchMovieDetails,
+    fetchedMovies,
+    selectedMovieDescription,
+  } = useMovies();
 
   const onInputValueChange = useCallback(
     async (event) => {
