@@ -6,13 +6,12 @@
     width: 75%;
     margin: 0 auto;
     align-self: center;
-    border-radius: 1rem;
-    border-radius: 1rem;
+    border-radius: 1em;
   }
 
   .text {
     position: absolute;
-    top: -2rem;
+    top: -2em;
     right: 20%;
     text-transform: uppercase;
 
@@ -32,26 +31,35 @@
 }
 
 .searchWrapper {
+  @media (max-width: 585px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   position: relative;
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  padding: 1rem;
+  padding: 1em;
   box-shadow: rgb(60 64 67 / 10%) 0px 1px 3px 1px;
   background: #f98162;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
 
   .yearInput {
-    width: 10%;
-    margin: 0 2rem;
+    @media (max-width: 585px) {
+      margin: 1em 0 0;
+    }
+
+    width: 6em;
+    margin: 0 2em;
   }
 
   input {
     height: 100%;
-    width: 15rem;
-    padding: 0.5rem;
-    font-size: 1rem;
+    width: 15em;
+    padding: 0.5em;
+    font-size: 1em;
     outline: none;
   }
 }

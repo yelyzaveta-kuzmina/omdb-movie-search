@@ -1,7 +1,7 @@
 .content {
   display: flex;
   height: 85%;
-  padding: 1rem;
+  padding: 1em;
 
   .posterWrapper {
     width: fit-content;
@@ -20,7 +20,11 @@
       }
 
       figcaption {
-        padding: 1rem 0;
+        padding: 1em 0;
+      }
+
+      .title {
+        font-weight: 600;
       }
     }
   }

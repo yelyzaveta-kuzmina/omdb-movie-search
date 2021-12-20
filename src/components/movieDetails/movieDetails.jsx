@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 const Block = ({ label, value }) => {
   return (
     <p>
-      <b>{label}: </b>
+      <span className={styles.label}>{label}: </span>
       {value}
     </p>
   );

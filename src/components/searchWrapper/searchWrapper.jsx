@@ -7,14 +7,14 @@ const autocompleteStyle = (isHighlighted) => ({
   background: isHighlighted ? "#EDEDED" : "white",
   boxShadow:
     "rgb(60 64 67 / 30%) 0px 1px 2px 0px, rgb(60 64 67 / 15%) 0px 1px 3px 1px",
-  padding: "0.5rem",
+  padding: "0.5em",
   cursor: "pointer",
 });
 
 const menuStyle = {
   position: "absolute",
-  padding: "1rem",
-  top: "2.5rem",
+  padding: "1em",
+  top: "2.5em",
   left: 0,
   zIndex: 10,
 };

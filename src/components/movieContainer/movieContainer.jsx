@@ -13,12 +13,12 @@ const MovieContainer = ({ selectedMovie, selectedMovieDescription }) => {
                 ? posterNotAvailable
                 : selectedMovie.Poster
             }
-            alt=""
+            alt="poster"
           />
           <figcaption>
-            <b>
+            <div className={styles.title}>
               {selectedMovie.Title} ({selectedMovie.Year})
-            </b>
+            </div>
           </figcaption>
         </figure>
       </div>

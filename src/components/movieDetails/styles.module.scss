@@ -1,11 +1,15 @@
-.details {
-    display: flex;
-    flex-direction: column;
-    white-space: pre-line;
-    width: 60%;
-    max-height: 85%;
+.label {
+  font-weight: 600;
+}
 
-    p > span {
-      text-transform: capitalize;
-    }
+.details {
+  display: flex;
+  flex-direction: column;
+  white-space: pre-line;
+  width: 60%;
+  max-height: 85%;
+
+  p > span {
+    text-transform: capitalize;
   }
+}
